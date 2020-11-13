@@ -1,0 +1,19 @@
+;------------- definiciones e includes ------------------------------
+.INCLUDE "m1280def.inc" ; Incluir definiciones de Registros para 1280
+;.INCLUDE "m2560def.inc" ; Incluir definiciones de Registros para 2560
+
+.equ INIT_VALUE = 0 ; Valor inicial R24
+
+;------------- inicializar ------------------------------------------
+ldi R24,INIT_VALUE
+
+;------------- ciclo principal --------------------------------------
+arriba: inc R24
+	cpi R24,10
+	breq abajo
+	rjmp arriba
+
+abajo: dec R24
+	cpi R24,0
+	breq arriba
+	rjmp abajo
