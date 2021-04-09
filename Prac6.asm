@@ -11,9 +11,11 @@ ldi R24,INIT_VALUE
 arriba: inc R24
 	cpi R24,10
 	breq abajo
+	out PORTA,R24
 	rjmp arriba
 
 abajo: dec R24
 	cpi R24,0
 	breq arriba
+	out PORTA,R24
 	rjmp abajo
